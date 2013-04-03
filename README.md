@@ -21,3 +21,7 @@
         path = C:/Program Files/KDiff3/kdiff3.exe
         keepBackup = false
         trustExitCode = false
+        
+#Undo last 'n' commits without losing changes
+
+    git reset --soft HEAD~n
