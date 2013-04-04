@@ -22,6 +22,18 @@
         keepBackup = false
         trustExitCode = false
         
-#Undo last 'n' commits without losing changes
+#Three ways of undoing last n commits
+
+[Read explanation here!](http://stackoverflow.com/a/6866485/463065)
+
+You want to nuke commit your and never see it again.
+    
+    git reset --hard HEAD~1
+    
+You want to undo the commit but keep your changes
+    
+    git reset HEAD~1
+    
+Undo your commit but leave your files and your index:
 
     git reset --soft HEAD~n
