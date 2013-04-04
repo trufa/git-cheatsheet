@@ -10,7 +10,7 @@
     git remote add origin git@github.com:trufa/test.git
     git push -u origin master 
 
-#Use kdiff3 as mergetool to solve conflicts
+#Use [kdiff3](http://kdiff3.sourceforge.net/) as mergetool to solve conflicts
 
 (paste this inside of your .git/config file)
 
