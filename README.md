@@ -22,7 +22,7 @@
         keepBackup = false
         trustExitCode = false
         
-#Three ways of undoing last n commits
+#Four ways of undoing last n commits
 
 [Read explanation here!](http://stackoverflow.com/a/6866485/463065)
 
@@ -37,6 +37,10 @@ You want to undo the commit but keep your changes
 Undo your commit but leave your files and your index:
 
     git reset --soft HEAD~n
+    
+If you only want to change the last commit message
+
+    git commit --amend -m "New commit message"
 
 #Basic branching [(tutorial)](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging)
 
