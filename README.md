@@ -26,7 +26,7 @@
 
 [Read explanation here!](http://stackoverflow.com/a/6866485/463065)
 
-You want to nuke commit your and never see it again.
+You want to nuke commit your and never see it again (Careful! Permanent loss).
     
     git reset --hard HEAD~n
     
