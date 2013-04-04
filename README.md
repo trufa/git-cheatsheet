@@ -37,3 +37,14 @@ You want to undo the commit but keep your changes
 Undo your commit but leave your files and your index:
 
     git reset --soft HEAD~n
+
+#Basic branching [(tutorial)](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging)
+
+Checkout to a new branch
+
+    git checkout -b newBranchName
+    
+Go back and merge
+
+    git checkout master
+    git merge newBranchName
