@@ -28,11 +28,11 @@
 
 You want to nuke commit your and never see it again.
     
-    git reset --hard HEAD~1
+    git reset --hard HEAD~n
     
 You want to undo the commit but keep your changes
     
-    git reset HEAD~1
+    git reset HEAD~n
     
 Undo your commit but leave your files and your index:
 
