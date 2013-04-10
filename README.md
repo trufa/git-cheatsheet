@@ -52,3 +52,7 @@ Go back and merge
 
     git checkout master
     git merge newBranchName
+    
+#Revert uncommited file to last version
+
+    git checkout filename
