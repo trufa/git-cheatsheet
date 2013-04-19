@@ -56,7 +56,7 @@ Go back and merge
 
     git checkout filename
     
-###Set vimdiff as default difftool
+###Set vimdiff as default difftool (see)[http://stackoverflow.com/a/3713865/463065]
 
     git config --global diff.tool vimdiff
     git config --global difftool.prompt false
