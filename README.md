@@ -62,6 +62,6 @@ Go back and merge
     git config --global difftool.prompt false
     git config --global alias.d difftool
 
-###Stash local changes to be able to pull withouth errors
+###Stash local changes to be able to pull withouth errors [(source)](http://stackoverflow.com/a/14318266/463065)
 
     git stash save --keep-index
