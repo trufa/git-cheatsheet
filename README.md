@@ -65,3 +65,9 @@ Go back and merge
 ###Stash local changes to be able to pull withouth errors [(source)](http://stackoverflow.com/a/14318266/463065)
 
     git stash save --keep-index
+    
+###Check if there is anything to pull, bring remote up to date [(source)](http://stackoverflow.com/a/3278427/463065)
+
+    git remote update
+    
+
