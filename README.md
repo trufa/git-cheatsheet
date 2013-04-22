@@ -70,4 +70,7 @@ Go back and merge
 
     git remote update
     
+###Know what you pulled [(source)](http://stackoverflow.com/a/1362990/463065)
+
+    git diff master master@{1}
 
