@@ -73,4 +73,7 @@ Go back and merge
 ###Know what you pulled [(source)](http://stackoverflow.com/a/1362990/463065)
 
     git diff master master@{1}
+    
+###Chechout to a remote branch
 
+    git checkout -b abranch origin/abranch
