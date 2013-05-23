@@ -77,3 +77,17 @@ Go back and merge
 ###Chechout to a remote branch
 
     git checkout -b abranch origin/abranch
+
+###Move uncommited changes to a new branch [(source)](http://stackoverflow.com/a/1394804/463065)
+
+    git checkout -b <new-branch>
+    git add <files>
+    git commit
+    
+###Move unccomited changes to existing branch [(source)](http://stackoverflow.com/a/556986/463065)
+
+    git stash
+    git checkout branch2
+    git stash pop
+
+    
