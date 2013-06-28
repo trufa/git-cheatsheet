@@ -62,7 +62,7 @@ Go back and merge
     git config --global difftool.prompt false
     git config --global alias.d difftool
 
-###Stash local changes to be able to pull withouth errors [(source)](http://stackoverflow.com/a/14318266/463065)
+###Stash local changes to be able to pull without errors [(source)](http://stackoverflow.com/a/14318266/463065)
 
     git stash save --keep-index
     
@@ -74,17 +74,17 @@ Go back and merge
 
     git diff master master@{1}
     
-###Chechout to a remote branch
+###Checkout to a remote branch
 
     git checkout -b abranch origin/abranch
 
-###Move uncommited changes to a new branch [(source)](http://stackoverflow.com/a/1394804/463065)
+###Move uncommitted changes to a new branch [(source)](http://stackoverflow.com/a/1394804/463065)
 
     git checkout -b <new-branch>
     git add <files>
     git commit
     
-###Move unccomited changes to existing branch [(source)](http://stackoverflow.com/a/556986/463065)
+###Move uncommitted changes to existing branch [(source)](http://stackoverflow.com/a/556986/463065)
 
     git stash
     git checkout branch2
