@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Git-cheatsheet by trufa</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Git-cheatsheet</h1>
+          <h2>This is a compilation of common git commands. It is to keep them all handy at one place.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/trufa/git-cheatsheet/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/trufa/git-cheatsheet/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/trufa/git-cheatsheet" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="git-cheat-sheet" class="anchor" href="#git-cheat-sheet"><span class="octicon octicon-link"></span></a>git Cheat Sheet</h1>
+
+<h3>
+<a name="always-pull-from-the-same" class="anchor" href="#always-pull-from-the-same"><span class="octicon octicon-link"></span></a>always pull from the same</h3>
+
+<pre><code>git config branch.master.remote origin
+git config branch.master.merge refs/heads/master
+</code></pre>
+
+<h3>
+<a name="start-from-existing-code--u-is-to-always-push-to-the-same" class="anchor" href="#start-from-existing-code--u-is-to-always-push-to-the-same"><span class="octicon octicon-link"></span></a>Start from existing code (-u is to always push to the same)</h3>
+
+<pre><code>git remote add origin git@github.com:trufa/test.git
+git push -u origin master 
+</code></pre>
+
+<h3>
+<a name="use-kdiff3-as-mergetool-to-solve-conflicts" class="anchor" href="#use-kdiff3-as-mergetool-to-solve-conflicts"><span class="octicon octicon-link"></span></a>Use <a href="http://kdiff3.sourceforge.net/">kdiff3</a> as mergetool to solve conflicts</h3>
+
+<p>(paste this inside of your .git/config file)</p>
+
+<pre><code>[merge]
+    tool = kdiff3
+
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    keepBackup = false
+    trustExitCode = false
+</code></pre>
+
+<h3>
+<a name="four-ways-of-undoing-last-n-commits" class="anchor" href="#four-ways-of-undoing-last-n-commits"><span class="octicon octicon-link"></span></a>Four ways of undoing last n commits</h3>
+
+<p><a href="http://stackoverflow.com/a/6866485/463065">Read explanation here!</a></p>
+
+<p>You want to nuke commit your and never see it again (Careful! Permanent loss).</p>
+
+<pre><code>git reset --hard HEAD~n
+</code></pre>
+
+<p>You want to undo the commit but keep your changes</p>
+
+<pre><code>git reset HEAD~n
+</code></pre>
+
+<p>Undo your commit but leave your files and your index:</p>
+
+<pre><code>git reset --soft HEAD~n
+</code></pre>
+
+<p>If you only want to change the last commit message</p>
+
+<pre><code>git commit --amend -m "New commit message"
+</code></pre>
+
+<h3>
+<a name="basic-branching-tutorial" class="anchor" href="#basic-branching-tutorial"><span class="octicon octicon-link"></span></a>Basic branching <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">(tutorial)</a>
+</h3>
+
+<p>Checkout to a new branch</p>
+
+<pre><code>git checkout -b newBranchName
+</code></pre>
+
+<p>Go back and merge</p>
+
+<pre><code>git checkout master
+git merge newBranchName
+</code></pre>
+
+<h3>
+<a name="revert-uncommited-file-to-last-version" class="anchor" href="#revert-uncommited-file-to-last-version"><span class="octicon octicon-link"></span></a>Revert uncommited file to last version</h3>
+
+<pre><code>git checkout filename
+</code></pre>
+
+<h3>
+<a name="set-vimdiff-as-default-difftool-source" class="anchor" href="#set-vimdiff-as-default-difftool-source"><span class="octicon octicon-link"></span></a>Set vimdiff as default difftool <a href="http://stackoverflow.com/a/3713865/463065">(source)</a>
+</h3>
+
+<pre><code>git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global alias.d difftool
+</code></pre>
+
+<h3>
+<a name="stash-local-changes-to-be-able-to-pull-without-errors-source" class="anchor" href="#stash-local-changes-to-be-able-to-pull-without-errors-source"><span class="octicon octicon-link"></span></a>Stash local changes to be able to pull without errors <a href="http://stackoverflow.com/a/14318266/463065">(source)</a>
+</h3>
+
+<pre><code>git stash save --keep-index
+</code></pre>
+
+<h3>
+<a name="check-if-there-is-anything-to-pull-bring-remote-up-to-date-source" class="anchor" href="#check-if-there-is-anything-to-pull-bring-remote-up-to-date-source"><span class="octicon octicon-link"></span></a>Check if there is anything to pull, bring remote up to date <a href="http://stackoverflow.com/a/3278427/463065">(source)</a>
+</h3>
+
+<pre><code>git remote update
+</code></pre>
+
+<h3>
+<a name="know-what-you-pulled-source" class="anchor" href="#know-what-you-pulled-source"><span class="octicon octicon-link"></span></a>Know what you pulled <a href="http://stackoverflow.com/a/1362990/463065">(source)</a>
+</h3>
+
+<pre><code>git diff master master@{1}
+</code></pre>
+
+<h3>
+<a name="checkout-to-a-remote-branch" class="anchor" href="#checkout-to-a-remote-branch"><span class="octicon octicon-link"></span></a>Checkout to a remote branch</h3>
+
+<pre><code>git checkout -b abranch origin/abranch
+</code></pre>
+
+<h3>
+<a name="move-uncommitted-changes-to-a-new-branch-source" class="anchor" href="#move-uncommitted-changes-to-a-new-branch-source"><span class="octicon octicon-link"></span></a>Move uncommitted changes to a new branch <a href="http://stackoverflow.com/a/1394804/463065">(source)</a>
+</h3>
+
+<pre><code>git checkout -b &lt;new-branch&gt;
+git add &lt;files&gt;
+git commit
+</code></pre>
+
+<h3>
+<a name="move-uncommitted-changes-to-existing-branch-source" class="anchor" href="#move-uncommitted-changes-to-existing-branch-source"><span class="octicon octicon-link"></span></a>Move uncommitted changes to existing branch <a href="http://stackoverflow.com/a/556986/463065">(source)</a>
+</h3>
+
+<pre><code>git stash
+git checkout branch2
+git stash pop
+</code></pre>
+
+<h3>
+<a name="get-commits-by-certain-user-source" class="anchor" href="#get-commits-by-certain-user-source"><span class="octicon octicon-link"></span></a>Get commits by certain user <a href="http://stackoverflow.com/a/2954501/463065">(source)</a>:</h3>
+
+<pre><code>git log --author=&lt;pattern&gt;
+</code></pre>
+        </section>
+
+        <footer>
+          Git-cheatsheet is maintained by <a href="https://github.com/trufa">trufa</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
