@@ -94,3 +94,10 @@ Go back and merge
 
     git log --author=<pattern>
     
+###Rename a file
+
+    git mv dir/oldName dir/newName
+
+And commit the changes.
+
+Note: the file needs to be added (`git add file`).
