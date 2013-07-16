@@ -101,3 +101,17 @@ Go back and merge
 And commit the changes.
 
 Note: the file needs to be added (`git add file`).
+
+###Exclude file from diff [(source)](http://stackoverflow.com/a/10421385/463065)
+
+Create a repository specific diff driver with this command
+
+    git config diff.nodiff.command /bin/true
+
+or for all your repos with --global.
+
+Assign the nodiff driver to those files you want ignored in your .git/info/attributes file.
+
+    irrelevant.php    diff=nodiff
+
+
