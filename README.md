@@ -90,7 +90,7 @@ Go back and merge
     git checkout branch2
     git stash pop
 
-###Get commits by certain user [(source)](http://stackoverflow.com/a/2954501/463065):
+###Get commits by certain user [(source)](http://stackoverflow.com/a/2954501/463065)
 
     git log --author=<pattern>
     
