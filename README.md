@@ -110,7 +110,7 @@ Create a repository specific diff driver with this command
 
 or for all your repos with --global.
 
-Assign the nodiff driver to those files you want ignored in your .git/info/attributes file.
+Assign the nodiff driver to those files you want ignored in your `.git/info/attributes` file.
 
     irrelevant.php    diff=nodiff
 
