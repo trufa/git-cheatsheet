@@ -113,5 +113,9 @@ or for all your repos with --global.
 Assign the nodiff driver to those files you want ignored in your `.git/info/attributes` file.
 
     irrelevant.php    diff=nodiff
+    
+###See what was changed by one specific commit
+
+    git show HashOfTheCommmit
 
 
