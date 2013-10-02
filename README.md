@@ -65,7 +65,19 @@ Go back and merge
 ###Stash local changes to be able to pull without errors [(source)](http://stackoverflow.com/a/14318266/463065)
 
     git stash save --keep-index
-    
+
+###Remove untracked files
+
+Files are lost permanently. Use *-n* or *--dry-run* to preview the effected files.
+
+####Remove only untracked files
+
+    git clean -f
+
+####Remove untracked files & directories
+
+    git clean -f -d
+
 ###Check if there is anything to pull, bring remote up to date [(source)](http://stackoverflow.com/a/3278427/463065)
 
     git remote update
