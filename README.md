@@ -130,7 +130,7 @@ Assign the nodiff driver to those files you want ignored in your `.git/info/attr
 
     git show HashOfTheCommmit
 
-###Se history of one file [(source)](http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning)
+###See history of one file [(source)](http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning)
 
     gitk fileName
     
@@ -138,3 +138,12 @@ Or
 
     git log -p fileName
 
+###List changes between two branches
+
+List changes files
+
+    git diff --name-status firstBranch secondBranch
+
+List changed files and number of changes
+
+    git diff --stat --color firstBranch secondBranch
