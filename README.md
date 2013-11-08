@@ -41,6 +41,10 @@ If you only want to change the last commit message
 
     git commit --amend -m "New commit message"
 
+###Retrieve a specific version of a file
+
+    git show <commit-id>:<path>
+
 ###Basic branching [(tutorial)](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging)
 
 Checkout to a new branch
@@ -51,7 +55,19 @@ Go back and merge
 
     git checkout master
     git merge newBranchName
-    
+
+###Help for resolve merge conflicts
+
+When at a merge conflict, find changes between the common ancestor and
+the file on our branch which was merged
+
+    git diff :1:<path> :2:<path>
+
+Find changes between the common ancestor and the file on the branch we
+are merging into the current branch
+
+    git diff :1:<path> :3:<path>
+
 ###Revert uncommited file to last version
 
     git checkout filename
@@ -151,3 +167,30 @@ List changed files and number of changes
 List changed commits in secondBranch not in firstBranch
 
     git log --oneline ^firstBranch secondBranch
+
+###Tags (annotated, the kind you can push to another repo)
+
+Make an annotated tag
+
+    git tag -a -m "Tag for 1.2.3.4 release" release-1.2.3.4
+
+Push an annotate tag to another repo
+
+    git push origin release-1.2.3.4
+
+or push all tags
+
+    git push --tags origin
+
+Rename a tag in local and remote repo
+
+    git tag newTagName oldTagName
+    git tag -d oldTagName
+    git push origin :refs/tags/oldTagName
+    git push --tags
+
+###Repo splunking
+
+List files in the repo on abranch (use 'HEAD' for current branch)
+
+    git ls-tree --full-tree -r abranch | awk '{print $4}'
