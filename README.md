@@ -63,7 +63,7 @@ the file on our branch which was merged
 
     git diff :1:<path> :2:<path>
 
-Find changes between the common ancestor and the file on the merge we
+Find changes between the common ancestor and the file on the branch we
 are merging into the current branch
 
     git diff :1:<path> :3:<path>
