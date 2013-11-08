@@ -147,3 +147,7 @@ List changes files
 List changed files and number of changes
 
     git diff --stat --color firstBranch secondBranch
+
+List changed commits in secondBranch not in firstBranch
+
+    git log --oneline ^firstBranch secondBranch
