@@ -4,7 +4,7 @@
     git config branch.master.remote origin
     git config branch.master.merge refs/heads/master
 
-###Start from existing code (-u is to always push to the same)
+###Start from existing code (-u is to [set the upstream](http://stackoverflow.com/a/5561327/463065).)
 
     git remote add origin git@github.com:trufa/test.git
     git push -u origin master 
