@@ -56,6 +56,10 @@ Go back and merge
     git checkout master
     git merge newBranchName
 
+###Push the current branch and set the remote as upstream
+
+git push --set-upstream origin branch
+
 ###Help for resolve merge conflicts
 
 When at a merge conflict, find changes between the common ancestor and
