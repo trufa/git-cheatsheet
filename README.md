@@ -198,3 +198,9 @@ Rename a tag in local and remote repo
 List files in the repo on abranch (use 'HEAD' for current branch)
 
     git ls-tree --full-tree -r abranch | awk '{print $4}'
+    
+###Compare the commits from two branches ([source](http://stackoverflow.com/a/11676279/463065))
+
+Display all commits that are in A but not in B
+
+    git log B..A
